@@ -1,0 +1,14 @@
+# This is the CodeDeploy configuration and defines which scripts are run at various stages in the deployment lifecycle
+
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/app/current
+hooks:
+  AfterInstall:
+    - location: aws/after_install.sh
+  # ApplicationStart:
+  #   - location: aws/app_start.sh
+  # ApplicationStop:
+  #   - location: aws/app_stop.sh
